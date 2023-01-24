@@ -4,13 +4,13 @@ Vue.createApp({
             becado:true
 
         }
-    },
-    methods: {
+    }
+/*     methods: {
         conBeca(){
             this.becado=true;
         },
         sinBeca(){
             this.becado=false;
         }
-    }
+    } */
 }).mount('#app')
