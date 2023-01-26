@@ -17,19 +17,32 @@
 
     <div class="container mt-3" id="app">
         <h1>Mis Productos</h1>
-        <form>
+        <form @submit.prevent="agregar()">
             <div class="mb-3">
                 <label class="form-label">Nombre del producto</label>
-                <input required type="text" class="form-control">
+                <input v-model="nombre" required type="text" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Precio del producto</label>
-                <input required type="number" class="form-control">
+                <input v-model="precio" required type="number" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Cantidad de productos</label>
-                <input required type="number" class="form-control">
+                <input v-model="cantidad" required type="number" class="form-control">
             </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de caducidad</label>
+                <input v-model="fecha" required type="date" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Peso</label>
+                <input v-model="peso" required type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Codigo</label>
+                <input v-model="codigo" required type="text" class="form-control">
+            </div>
+            
 
 
             <button type="submit" class="btn btn-primary">Agregar</button>
@@ -41,25 +54,19 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
+                    <th scope="col">fecha</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Codigo</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                <tr v-for="producto in productos">
+                    <th scope="row">{{producto.nombre}}</th>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.cantidad}}</td>
+                    <td>{{producto.fecha}}</td>
+                    <td>{{producto.peso}}</td>
+                    <td>{{producto.codigo}}</td>
                 </tr>
             </tbody>
         </table>
@@ -69,7 +76,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="carrito.js"></script>
+    <script src="carritoObj.js"></script>
 
 </body>
 
