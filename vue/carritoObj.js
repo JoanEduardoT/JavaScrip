@@ -1,12 +1,14 @@
 Vue.createApp({
     data(){
         return {
+            colorTable:'dark',
             nombre:'',
             precio:'',
             cantidad:'',
             fecha:'',
             peso:'',
             codigo:'',
+            url:'',
 
             productos:[
 
@@ -34,6 +36,7 @@ Vue.createApp({
                 fecha:this.fecha,
                 peso:this.peso,
                 codigo:this.codigo,
+                url:this.url
             }
             this.productos.push(producto);
         }
