@@ -15,13 +15,17 @@
     <div id="app">
         
 
-            <label for="customRange1" class="form-label">Example range</label>
-            <input v-model="porcentaje" min="0" max="100" type="range" class="form-range" id="customRange1">
+            <label>Elige un producto</label>
+            <select v-model="producto" name="" id="">
+                <option value="1">Manzana</option>
+                <option value="2">Pera</option>
+                <option value="3">Mango</option>
+                <option value="4">Fresa</option>
+                <option value="5">Uva</option>
+            </select>
 
-            <div class="progress" role="progressbar" aria-label="Example with label"
-                aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" :style="'width: '+porcentaje+'%'">{{porcentaje}}%</div>
-            </div>
+            <img :src="SeleccionProducto" style="width: 100px;">
+
         
     </div>
     
@@ -29,7 +33,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="progress.js"></script>
+    <script src="select.js"></script>
 
 </body>
 

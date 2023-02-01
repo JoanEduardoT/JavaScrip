@@ -12,16 +12,13 @@
 </head>
 
 <body>
-    <div id="app">
-        
+    <div class="container mt-3" id="app">
+        <p>Captura tu edad</p>
+        <input v-model="edad" type="number" class="form-control">
+        <button class="btn btn-success mt-2">Calcular</button>
+        <p>{{CalcularEdad}}</p>
 
-            <label for="customRange1" class="form-label">Example range</label>
-            <input v-model="porcentaje" min="0" max="100" type="range" class="form-range" id="customRange1">
-
-            <div class="progress" role="progressbar" aria-label="Example with label"
-                aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" :style="'width: '+porcentaje+'%'">{{porcentaje}}%</div>
-            </div>
+           
         
     </div>
     
@@ -29,7 +26,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="progress.js"></script>
+    <script src="app.js"></script>
 
 </body>
 
