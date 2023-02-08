@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container mt-3" id="app">
+
+        <h1>Dar alta curso</h1>
+        <form @submit.prevent="agregar()">
+            <div class="mb-3">
+                <label class="form-label">Nombre del curso</label>
+                <input v-model="nombreCurso" required type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripcion del curso</label>
+                <input v-model="descripcion" required type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Imagen del curso</label>
+                <input v-model="imagen" required type="url" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Precio del curso</label>
+                <input v-model="precio" required type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cantidad de cursos comprados</label>
+                <input v-model="cantcomprados" required type="number" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+
+        <!-- <button @click="obtener()" class="btn btn-success">Obtener amiibos</button>
+ -->
+
+        <div class="d-flex flex-wrap">
+            <div v-for="curso in cursos" class="card m-2" style="width: 18rem;">
+                <img :src="curso.imagen" style="width: 200px;" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{curso.nombreCurso}}</h5>
+                    <p class="card-text">{{curso.descripcion}}</p>
+                    <p class="card-text">${{curso.precio}}</p>
+                    <p class="card-text">Cant.Comprados: {{curso.cantcomprados}}</p>
+                    <a href="#" class="btn btn-primary">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
+
+        <h1>Total : {{total2}}</h1>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="examen.js"></script>
+    <script>app.mount('#app')</script>
+
+</body>
+
+</html>
