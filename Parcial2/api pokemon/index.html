@@ -23,6 +23,56 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">{{pokemon.name}}</h5>
+
+                  <p class="card-text">Habilidades</p>
+                  <span v-for="abilidad in pokemon.abilities" class="mx-1 badge bg-success">
+                    {{abilidad.ability.name}}
+                  </span>
+
+                  <!--game_indices
+                      stats
+                      types                        
+                      moves -->
+                  <p class="mt-3">
+                  <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#1" aria-expanded="true" aria-controls="1">
+                    Index
+                  </button>
+                  </p>
+                 <!--  <p class="card-text">Index</p> -->
+                  <span v-for="index in pokemon.game_indices" class="mx-1 badge bg-primary" id="1">
+                    {{index.version.name}}
+                  </span>
+
+                  <!-- <p class="card-text">Stats</p> -->
+                  <p class="mt-3">
+                    <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#2" aria-expanded="true" aria-controls="2">
+                      Stats
+                    </button>
+                    </p>
+                  <span v-for="stat in pokemon.stats" class="mx-1 badge bg-secondary" id="2">
+                    {{stat.base_stat}}
+                  </span>
+
+                <!--   <p class="card-text">Types</p> -->
+                <p class="mt-3">
+                  <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#3" aria-expanded="true" aria-controls="3">
+                    Types
+                  </button>
+                  </p>
+                  <span v-for="type in pokemon.types" class="mx-1 badge bg-success" id="3">
+                    {{type.type.name}}
+                  </span>
+
+                 <!--  <p class="card-text">Moves</p> -->
+                 <p class="mt-3">
+                  <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#4" aria-expanded="true" aria-controls="4">
+                    Moves
+                  </button>
+                  </p>
+                  <span v-for="move in pokemon.moves" class="mx-1 badge bg-secondary" id="4">
+                    {{move.move.name}}
+                  </span>
+
                   <p class="card-text">Peso: {{pokemon.weight}}</p>
                   <p class="card-text">Altura: {{pokemon.height}}</p>
                   <p class="card-text"><small class="text-muted">No.{{pokemon.order}}</small></p>
