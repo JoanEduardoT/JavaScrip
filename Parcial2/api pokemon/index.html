@@ -13,11 +13,24 @@
 
 <body>
   <div class="container mt-3 " id="app">
+    <div class="mb-3">
+      <label class="form-label">Cantidad de pokemons a Generar</label>
+      <input v-model="cant" required type="number" class="form-control">
+  </div>
     <button @click="getPokemon()" class="btn btn-primary">Generar</button>
 
 
+    <!-- MOSTRAR MIENTRAS ESTA CARGANDO -->
+    <div v-if="loading">
+    <h1 class="text-warning">Cargando</h1>
+    <img src="https://orig00.deviantart.net/f60e/f/2017/042/0/7/pokeball_gif_by_termatior0-dayo3ow.gif" alt="No se encontro foto" style="width: 100px;">
+    </div>
+
+    
+    <!-- MOSTRAR AL TERMINAR DE CARGAR -->
     <div class="d-flex flex-wrap">
-      <div v-if="pokemones.length>0" v-for="pokemon in pokemones" class="card mb-3" style="max-width: 540px;">
+      <!-- v-if="pokemones.length>" -->
+      <div v-if="loading" v-for="pokemon in pokemones" class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-4">
             <img :src="pokemon.sprites.other.dream_world.front_default" class="img-fluid rounded-start" alt="...">
@@ -26,28 +39,28 @@
             <div class="card-body">
               <h5 class="card-title">{{pokemon.name}}</h5>
 
-              <p class="card-text">Habilidades</p>
+              <!-- <p class="card-text">Habilidades</p>
               <span v-for="abilidad in pokemon.abilities" class="mx-1 badge bg-success">
                 {{abilidad.ability.name}}
-              </span>
+              </span> -->
 
               <!--game_indices
                       stats
                       types                        
                       moves -->
-              <p class="mt-3">
+              <!-- <p class="mt-3">
                 <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#1"
                   aria-expanded="true" aria-controls="1">
                   Index
                 </button>
-              </p>
+              </p> -->
               <!--  <p class="card-text">Index</p> -->
-              <span v-for="index in pokemon.game_indices" class="mx-1 badge bg-primary" id="1">
+              <!-- <span v-for="index in pokemon.game_indices" class="mx-1 badge bg-primary" id="1">
                 {{index.version.name}}
-              </span>
+              </span> -->
 
               <!-- <p class="card-text">Stats</p> -->
-              <p class="mt-3">
+              <!-- <p class="mt-3">
                 <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#2"
                   aria-expanded="true" aria-controls="2">
                   Stats
@@ -55,21 +68,21 @@
               </p>
               <span v-for="stat in pokemon.stats" class="mx-1 badge bg-secondary" id="2">
                 {{stat.base_stat}}
-              </span>
+              </span> -->
 
               <!--   <p class="card-text">Types</p> -->
-              <p class="mt-3">
+              <!-- <p class="mt-3">
                 <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#3"
                   aria-expanded="true" aria-controls="3">
                   Types
-                </button>
+                </button> -->
               </p>
               <span v-for="type in pokemon.types" class="mx-1 badge bg-success" id="3">
                 {{type.type.name}}
               </span>
 
               <!--  <p class="card-text">Moves</p> -->
-              <p class="mt-3">
+              <!-- <p class="mt-3">
                 <button class="btn btn-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#4"
                   aria-expanded="true" aria-controls="4">
                   Moves
@@ -81,7 +94,7 @@
 
               <p class="card-text">Peso: {{pokemon.weight}}</p>
               <p class="card-text">Altura: {{pokemon.height}}</p>
-              <p class="card-text"><small class="text-muted">No.{{pokemon.order}}</small></p>
+              <p class="card-text"><small class="text-muted">No.{{pokemon.order}}</small></p> -->
             </div>
           </div>
         </div>

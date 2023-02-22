@@ -1,8 +1,9 @@
 Vue.createApp({
     data() {
         return {
-            pokemones: []
-
+            cant:0,
+            pokemones: [],
+            loading:true
         }
     },
     mounted() {
@@ -20,8 +21,10 @@ Vue.createApp({
                        const response = await fetch('https://pokeapi.co/api/v2/pokemon/'+random,{
                             method:'GET'
                         }); */
+            this.loading
+
             var i = 1
-            while (i <= 200) {
+            while (i <= this.cant) {
 
                 const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i, {
                     method: 'GET'
