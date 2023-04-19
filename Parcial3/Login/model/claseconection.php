@@ -33,9 +33,9 @@ class conection{
 
     }
 
-    public function citashoy(){
+    public function usuarios(){
 
-        $sql = "CALL ListarCitas()";
+        $sql = "CALL usuarios()";
         $statement = $this->conn->prepare($sql);
 
         if($statement->execute()){
@@ -44,47 +44,6 @@ class conection{
        
             return $result; }
         }
-
-        public function Reporte0(){
-
-            $sql = "CALL Reportes0()";
-            $statement = $this->conn->prepare($sql);
-    
-            if($statement->execute()){
-    
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC); 
-           
-                return $result; }
-            }
-
-        function reporte1($enfermedad){
-
-            $sql = "CALL Reportes1(?)";
-            $statement =$this->conn->prepare($sql);
-            $statement->bindParam(1,$enfermedad);
-    
-        }
-
-        Public function reporte2($sexo,$nombre){
-        
-            $sql = "CALL Reportes2(?,?)";
-            $statement = $this->conn->prepare($sql);
-    
-            $statement->bindParam(1,$sexo);
-            $statement->bindParam(2,$nombre);
-        }
-
-        public function Reporte3(){
-
-            $sql = "CALL Reportes3()";
-            $statement = $this->conn->prepare($sql);
-    
-            if($statement->execute()){
-    
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC); 
-           
-                return $result; }
-            }
 }
 //$obj = new Conection();
 
